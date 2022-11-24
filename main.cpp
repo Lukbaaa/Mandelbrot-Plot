@@ -3,6 +3,7 @@
 #include <complex>
 #include <cmath>
 
+const int ITERATIONS = 5;
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1500,1000), "Fourier series", sf::Style::Default);
@@ -21,9 +22,14 @@ int main() {
 
         for (int x = 0; x <= 1500; x+=2) { 
             for (int y = 0; y <= 1000; y+=8) {
+                c = (x/1500, y);
                 sf:: Vertex ver;
                 ver.position = sf::Vector2f(x,y);
                 ver.color = sf::Color::Red;
+
+                for (int i = 0; i <= ITERATIONS; i++) {
+                    
+                }
 
                 window.draw(&ver, 1, sf::Points);
             }
