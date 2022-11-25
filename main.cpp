@@ -1,11 +1,42 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <complex>
+#include <array>
 
-const int ITERATIONS = 20;
+const int ITERATIONS = 27;
+
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1500,1000), "Fourier series", sf::Style::Default);
+
+    std::array<sf::Color, 27> colors = {
+    sf::Color(141, 0, 0),
+    sf::Color(133, 4, 31),
+    sf::Color(121, 17, 70),
+    sf::Color(113, 31, 108),
+    sf::Color(100, 40, 145),
+    sf::Color(92, 53, 181),
+    sf::Color(79, 66, 217),
+    sf::Color(70, 79, 252),
+    sf::Color(57, 104, 217),
+    sf::Color(49, 129, 181),
+    sf::Color(35, 153, 145),
+    sf::Color(26, 181, 108),
+    sf::Color(12, 205, 70),
+    sf::Color(4, 229, 31),
+    sf::Color(0, 252, 0),
+    sf::Color(4, 229, 31),
+    sf::Color(12, 205, 70),
+    sf::Color(26, 181, 108),
+    sf::Color(35, 153, 145),
+    sf::Color(49, 129, 181),
+    sf::Color(57, 104, 217),
+    sf::Color(70, 79, 252),
+    sf::Color(79, 66, 217),
+    sf::Color(92, 53, 181),
+    sf::Color(100, 41, 147),
+    sf::Color(112, 32, 111)
+    };
 
     std::complex<double> c(0,0);
     std::complex<double> z(0,0);
@@ -26,7 +57,7 @@ int main() {
                     //std::cout << " extended" << std::endl;
                     sf:: Vertex ver;
                     ver.position = sf::Vector2f(x,y);
-                    ver.color = sf::Color(50*(i/20),0*i,0*i,250);
+                    ver.color = colors[i];
                     window.draw(&ver, 1, sf::Points);
                     extended = true;
                   
